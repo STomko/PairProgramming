@@ -10,6 +10,10 @@ namespace ArrayJobby
     {
         static void Main(string[] args)
         {
+            //Simple array of random numbers.
+            int[] numArray = new int[] {85,12,3,72,111,26,18,55,90,8,-12,6};
+
+
             // The code provided will print ‘Hello World’ to the console.
             // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
             Console.WriteLine("Hello World!");
