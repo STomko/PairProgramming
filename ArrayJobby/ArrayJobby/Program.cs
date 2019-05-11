@@ -14,27 +14,33 @@ namespace ArrayJobby
             int[] numArray = new int[] {85,12,3,72,111,26,18,55,90,8,-12,6};
 
 
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            // Find two lowest numbers, remove from array, add together + append to end
+            int[] twoLowestValues = new int[2];
 
-            // What's this? a shameless plug?
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            for (int i = 0; i < 2; i++)
+            {
+                int lowestInt = numArray.Min();
+                numArray = numArray.Where(x => x != lowestInt).ToArray();
+                twoLowestValues[i] = lowestInt;
+            }
+
+            List<int> tempNumArray = numArray.ToList();
+            tempNumArray.Add(twoLowestValues.Sum());
+            numArray = tempNumArray.ToArray();
 
 
-            //DEBUG - This code is to test that the sumToArray function works.
-            numArray = sumToArray(5, 12, numArray);
+
+            /*numArray = sumToArray(twoLowestValues[0], twoLowestValues[1], numArray);
             for (int i = 0; i < numArray.Length; i++)
             {
                 Console.WriteLine(numArray[i]);
-            }
+            }*/
             Console.ReadKey();
-            //DEBUG - End
+
         }
 
         //Takes in two integers, sums them and appends them to the array.
-        static int[] sumToArray(int num1, int num2, int[] numArray)
+        /*static int[] sumToArray(int num1, int num2, int[] numArray)
         {
             //Sums the two values.
             int total = num1 + num2;
@@ -52,6 +58,6 @@ namespace ArrayJobby
             returnArray[returnArray.Length-1] = total;
 
             return returnArray;
-        }
+        }*/
     }
 }
